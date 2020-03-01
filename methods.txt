@@ -1,0 +1,9 @@
+spotify_user.saved_tracks.collect do |t| t.artists[0].name end #SAVED SONG LIST
+
+spotify_user.saved_tracks.collect do |t| t.name end #SAVED SONG ARTISTS LIST
+
+playlist = spotify_user.create_playlist!('rails app playlist test') #CREATE PLAYLIST
+
+tracks[0].href #LINK TO SONG
+
+x = spotify_user.saved_tracks.collect do |t| t.album.images[1]["url"] end #ALBUM IMAGE

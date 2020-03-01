@@ -1,0 +1,9 @@
+<h1 align="center">Sign Up for potisfy 2.0</h1>
+<%= form_for(@user, url: '/signup') do |f| %>
+  <%= f.label :username%><br>
+  <%= f.text_field :username%><br>
+  <%= f.label :password%><br>
+  <%= f.password_field :password%><br>
+  <%= f.submit 'Sign Up'%>
+  <%= @user.errors.full_messages.first if @user.errors.any? %>
+<% end %>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PotisfyRails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div>
+      <% if logged_in? %>
+      <%= button_to("User Profile", user_path(current_user)) %>
+      <%= button_to("Logout", logout_path, method: "delete")%>
+    <% else %>
+      <%= button_to("Sign Up", '/signup') %>
+    <% end %>
+    </div>
+    <%= yield %>
+  </body>
+</html>
