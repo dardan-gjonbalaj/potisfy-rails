@@ -10,29 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_26_212552) do
-
-  create_table "albums", force: :cascade do |t|
-    t.string "name"
-    t.string "artist_name"
-    t.string "genre"
-    t.string "release_date"
-    t.integer "artist_id"
-    t.index ["artist_id"], name: "index_albums_on_artist_id"
-  end
+ActiveRecord::Schema.define(version: 2020_03_02_180712) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "genre_name"
+  end
+
   create_table "songs", force: :cascade do |t|
     t.string "title"
-    t.string "artist"
-    t.string "genre"
     t.integer "artist_id"
-    t.integer "album_id"
-    t.index ["album_id"], name: "index_songs_on_album_id"
-    t.index ["artist_id"], name: "index_songs_on_artist_id"
+    t.integer "genre_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,7 +31,4 @@ ActiveRecord::Schema.define(version: 2020_02_26_212552) do
     t.string "password_digest"
   end
 
-  add_foreign_key "albums", "artists"
-  add_foreign_key "songs", "albums"
-  add_foreign_key "songs", "artists"
 end

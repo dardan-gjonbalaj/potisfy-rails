@@ -1,8 +1,12 @@
+
+
+
+
 <h1 align="center"><%=link_to "#{spotify_user.email}", "#{spotify_user.external_urls["spotify"]}", :target => "_blank" %></h1>
-<button><h3 align="center"><%= link_to "Add New Song", new_song_path %></h3></button>
+<button><h3 align="center"><%= link_to "Add New Song", new_song_path%></h3></button> 
 <ul>
   <%= spotify_user.saved_tracks(limit:50, offset:0).collect do |song| %>
-    <li><%= image_tag "#{song.album.images[1]["url"]}"%>
-      <%= link_to "#{song.artists[0].name} - #{song.name}", "#{song.external_urls["spotify"]}", :target => "_blank" %></li>
+   <li><%= image_tag "#{song.album.images[1]["url"]}"%>
+    <%= link_to "#{song.artists[0].name} - #{song.name}", "#{song.external_urls["spotify"]}", :target => "_blank" %></li>
   <%end%>
 </ul>

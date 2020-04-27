@@ -30,7 +30,7 @@ gem 'omniauth', '~> 1.3.1'
 gem 'pry'
 gem 'awesome_print'
 gem 'hirb'
-gem 'dotenv'
+gem 'dotenv-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

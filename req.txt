@@ -1,0 +1,10 @@
+in seed file song genre artist for joins 5 genre 5 artist
+crud for new songs using drop down for genre artist
+create a new artist and genre have them be seperate
+nested new route for song through artist
+song belongs to artist and genre
+artist has many songs, has many genres through songs
+genre has many songs, has many artists through songs
+
+
+if i were to use comments, it would link through "spotify id"  
